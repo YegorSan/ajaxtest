@@ -3,7 +3,7 @@
     
     <div class="panel-heading">
         <h3 class="panel-title"><%= post.title %></h3>
-        <p><%= post.content %></p>
+        <p><%= truncate(post.content, :length => 75) %></p>
     </div>
     
     <div class="panel-body"> <!---Body panel--->
@@ -12,6 +12,7 @@
       
         <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myupdatepost_<%= post.id %>">Edit</button>
+            <%= link_to 'Show', post, class: "btn btn-success" %>
             <%= link_to 'Destroy', post, method: :delete, class: "btn btn-danger" %>
         </div>
     </div>
